@@ -1,5 +1,6 @@
 {
   pkgs ? (import <nixpkgs> {}),
+  system ? builtins.currentSystem,
   ...
 } :
 derivation {
@@ -8,5 +9,5 @@ derivation {
   args = [ ./builder.sh ];
   src = ./i3lock;
   inherit (pkgs) coreutils;
-  system = builtins.currentSystem;
+  inherit system;
 }
