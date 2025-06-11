@@ -10,4 +10,15 @@ derivation {
   src = ./i3lock;
   inherit (pkgs) coreutils;
   inherit system;
+
+  buildInputs = with pkgs; [
+    xorg.xcbutil
+    xorg.xcbutilimage
+    xcbutilxrm
+    libxkbcommon
+    cairo
+    systemd
+    libev
+    pam
+  ];
 }
